@@ -1,5 +1,0 @@
-sceneSetups:
-- path: Assets/I-LOVE-TO-STACK-HH.unity
-  isLoaded: 1
-  isActive: 1
-  isSubScene: 0
