@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagment;
+using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
 
@@ -37,6 +37,15 @@ public bool Done;
     // Update is called once per frame
     void Update()
     {
+
+        if(Done != true)
+        {
+text.text = " Score: " + Level;
+
+
+        }
+
+       
         if (Done)
         {
             return;
@@ -44,7 +53,7 @@ public bool Done;
 
         }
         var time = Mathf.Abs(Time.realtimeSinceStartup % 2f - 1f);
-        var pos1 = lastcube.transform.position + Vector3.up * 10f;
+        var pos1 = lastCube.transform.position + Vector3.up * 10f;
         var pos2 = pos1 + ((Level % 2 == 0) ? Vector3.left : Vector3.forward) * 120;
         if(Level % 2 == 0)
         {
@@ -74,9 +83,8 @@ public bool Done;
 
 void Newblock()
 {
-If(lastCube != null)
-{
-
+    if (lastCube != null)
+    { 
 currentCube.transform.position = new Vector3(Mathf.Round(currentCube.transform.position.x),
 currentCube.transform.position.y, 
 Mathf.Round(currentCube.transform.position.z));
